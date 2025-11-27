@@ -14,10 +14,10 @@ class NotificationProvider extends ServiceProvider
     public function register(): void
     {
         //
-        /*$this->app->singleton(NotificationService::class, function($app){
+        $this->app->singleton(NotificationService::class, function($app){
             //
             return new NotificationService();
-        });*/
+        });
         //
         $this->app->singleton('notification', function($app){
             //
@@ -31,6 +31,6 @@ class NotificationProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        //Facade::class_alias(NotificationService::class, 'NotificationService');
+        //Facade::class_alias(NotificationService::class, 'Notification');
     }
 }

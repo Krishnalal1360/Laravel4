@@ -3,81 +3,65 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Traits\UserTrait;
+use App\Models\Product;
 
-class DIController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    //
-    use UserTrait;
-    //
-    // use getUserInfo from UserTrait
     public function index()
     {
         //
-        $this->getUserInfo("Alex", 25, 70.5, true);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    // use userSlug helper function
     public function create()
     {
         //
-        $slug = userSlug("John Doe");
-        dd($slug); // Outputs: john-doe
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    // Dependency Injection example method
     public function store(Request $request)
     {
         //
-        // Request $request is injected
     }
 
     /**
      * Display the specified resource.
      */
-    // Dependency Injection example method
     public function show(string $id)
     {
         //
-        // string $id is injected
+        $product = Product::findorFail($id);
+        dd($product);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    // Dependency Injection example method
     public function edit(string $id)
     {
         //
-        // string $id is injected
     }
 
     /**
      * Update the specified resource in storage.
      */
-    // Dependency Injection example method
     public function update(Request $request, string $id)
     {
         //
-        // Request $request and string $id are injected
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    // Dependency Injection example method
     public function destroy(string $id)
     {
         //
-        // string $id is injected
     }
 }
